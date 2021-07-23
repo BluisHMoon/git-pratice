@@ -3,9 +3,35 @@ import './App.css';
 
 function App() {
   return (
-    <div className="list">
-      <input type="text" name="title" />
-      <input type="text" name="description" />
+    <div className="content">
+      <div className="list">
+        <div className="input-area">
+          標題輸入框
+          <input 
+            type="text" 
+            name="title"
+          />
+        </div>
+        <div className="input-area">
+          內容輸入框
+          <input 
+            type="text" 
+            name="description"
+          />
+        </div>
+        <div className="btn-area">
+          <button 
+            type="button"
+            name="submit"
+            onClick={insertNewData}
+          >
+            新增
+          </button>
+        </div>
+      </div>
+      <div className="result_area">
+
+      </div>
     </div>
     // <div className="App">
     //   <header className="App-header">
@@ -25,5 +51,7 @@ function App() {
     // </div>
   );
 }
+
+
 
 export default App;

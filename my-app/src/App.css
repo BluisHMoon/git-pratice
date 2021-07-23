@@ -39,4 +39,27 @@
 
 .list{
   display: flex;
+  width: 400px;
+  height: auto;
+  border: 1px solid #282c34;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.result_area{
+  display: flex;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.input-area, .btn-area{
+  padding-top: 5px;
 }
