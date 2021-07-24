@@ -94,14 +94,33 @@ class App extends React.Component{
 class TODOResult extends React.Component{
   render(){
     return(
-      <ul>
-        {this.props.items.map(item => (
-          <li key={item.id}>
-            <div>{item.title}</div>
-            <div>{item.description}</div>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {this.props.items.map(item => (
+            <li key={item.id}>
+              <div className="btn-group">
+                <div>{item.title}</div>
+                <div>
+                  <button 
+                    type="button"
+                  >
+                    編輯
+                  </button>
+                </div>
+                <div>
+                  <button 
+                    type="button"
+                    onClick={this.deleteItem(item.id)}
+                  >
+                    刪除
+                  </button>
+                </div>
+              </div>
+              <div className="description-line">{item.description}</div>   
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }

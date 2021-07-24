@@ -63,3 +63,11 @@
 .input-area, .btn-area{
   padding-top: 5px;
 }
+
+.btn-group{
+  display: inline-flex;
+}
+
+.description-line, .btn-group div{
+  padding-left: 5px;
+}
