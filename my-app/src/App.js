@@ -2,128 +2,113 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import TODOForm from './view/TODOForm';
+import TODOList from './view/TODOList';
 
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = { items: [], title: '', description: ''};
-    this.titleChange = this.titleChange.bind(this);
-    this.descriptionChange = this.descriptionChange.bind(this);
-    this.dataSubmit = this.dataSubmit.bind(this);
+    this.state = {
+      list: [],
+    };
   }
-
-  // titleChange = () => {
-  //   const {} = this.props;
-  // }
-
-  // descriptionChange = () => {
-  //   const {} = this.props;
-  // }
-
-  // dataSubmit = () => {
-  //   const {} = this.props;
-  // }
 
   render(){
     return(
       <div className="content">
-        <div className="list">
-          <div className="input-area">
-            標題輸入框
-            <input 
-              type="text" 
-              name="title"
-              onChange={this.titleChange}
-              value={this.state.title}
-            />
-          </div>
-          <div className="input-area">
-            內容輸入框
-            <input 
-              type="text" 
-              name="description"
-              onChange={this.descriptionChange}
-              value={this.state.description}
-            />
-          </div>
-          <div className="btn-area">
-            <button 
-              type="button"
-              name="submit"
-              onClick={this.dataSubmit}
-            >
-              新增
-            </button>
-          </div>
-        </div>
-        <div className="result_area">
-          <TODOResult items = {this.state.items} />
-        </div>
+        <TODOForm />
+        <TODOList />
       </div>
     );
   }
 
-  titleChange(e) {
-    this.setState({ title: e.target.value });
-  }
+  // constructor(props){
+  //   // 呼叫父類別建構子
+  //   super(props);
+  //   this.state = { items: [], title: '', description: ''};
+  //   this.titleChange = this.titleChange.bind(this);
+  //   this.descriptionChange = this.descriptionChange.bind(this);
+  //   this.dataSubmit = this.dataSubmit.bind(this);
+  // }
 
-  descriptionChange(e) {
-    this.setState({ description: e.target.value });
-  }
+  // // titleChange = () => {
+  // //   const {} = this.props;
+  // // }
 
-  dataSubmit(e){
-    e.preventDefault();
-    if(this.state.title.length === 0 || this.state.description.length === 0){
-      return;
-    }
+  // // descriptionChange = () => {
+  // //   const {} = this.props;
+  // // }
 
-    const newItem = {
-      id: Date.now(),
-      title: this.state.title,
-      description: this.state.description
-    };
+  // // dataSubmit = () => {
+  // //   const {} = this.props;
+  // // }
 
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      title: '',
-      description: ''
-    }));
-  }
+  // render(){
+  //   return(
+  //     <div className="content">
+
+  //       <div className="list">
+  //         <div className="input-area">
+  //           標題輸入框
+  //           <input 
+  //             type="text" 
+  //             name="title"
+  //             onChange={this.titleChange}
+  //             value={this.state.title}
+  //           />
+  //         </div>
+  //         <div className="input-area">
+  //           內容輸入框
+  //           <input 
+  //             type="text" 
+  //             name="description"
+  //             onChange={this.descriptionChange}
+  //             value={this.state.description}
+  //           />
+  //         </div>
+  //         <div className="btn-area">
+  //           <button 
+  //             type="button"
+  //             name="submit"
+  //             onClick={this.dataSubmit}
+  //           >
+  //             新增
+  //           </button>
+  //         </div>
+  //       </div>
+  //       <div className="result_area">
+  //         <TODOResult items = {this.state.items} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // titleChange(e) {
+  //   this.setState({ title: e.target.value });
+  // }
+
+  // descriptionChange(e) {
+  //   this.setState({ description: e.target.value });
+  // }
+
+  // dataSubmit(e){
+  //   e.preventDefault();
+  //   if(this.state.title.length === 0 || this.state.description.length === 0){
+  //     return;
+  //   }
+
+  //   const newItem = {
+  //     id: Date.now(),
+  //     title: this.state.title,
+  //     description: this.state.description
+  //   };
+
+  //   this.setState(state => ({
+  //     items: state.items.concat(newItem),
+  //     title: '',
+  //     description: ''
+  //   }));
+  // }
 }
-
-class TODOResult extends React.Component{
-  render(){
-    return(
-      <div>
-        <ul>
-          {this.props.items.map(item => (
-            <li key={item.id}>
-              <div className="btn-group">
-                <div>{item.title}</div>
-                <div>
-                  <button 
-                    type="button"
-                  >
-                    編輯
-                  </button>
-                </div>
-                <div>
-                  <button 
-                    type="button"
-                    onClick={this.deleteItem(item.id)}
-                  >
-                    刪除
-                  </button>
-                </div>
-              </div>
-              <div className="description-line">{item.description}</div>   
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
-
 
 export default App;
