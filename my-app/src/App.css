@@ -37,6 +37,10 @@
   }
 }
 
+.content{
+  padding-top: 16px;
+}
+
 .list{
   display: flex;
   width: 400px;
@@ -62,10 +66,36 @@
 
 .input-area, .btn-area{
   padding-top: 5px;
+  font-size: 20px;
+}
+
+.text-input{
+  padding: 5px;
 }
 
 .btn-group{
   display: inline-flex;
+}
+
+.list-area{
+  display: flex;
+  width: 400px;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.li-title, .li-content{
+  font-size: 20px;
+}
+
+.li-edit, .li-delete{
+  margin-left: 10px;
+  border: solid;
+  border-radius: 20%;
 }
 
 .description-line, .btn-group div{
