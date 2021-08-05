@@ -7,6 +7,7 @@ class TODOForm extends React.Component {
             id: Date.now(),
             title: '',
             description: '',
+            isEditing: false,
         }
     }
 

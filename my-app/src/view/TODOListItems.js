@@ -1,11 +1,9 @@
 import React from 'react';
 
 class TODOListItems extends React.Component{
-    // 編輯物件（向上傳遞→TODOList）
+    // 編輯物件
     handleEditItem(){
-        if(this.props.onEditItem){
-            this.props.onEditItem(this.props.itemId);
-        }
+        
     }
 
     // 刪除物件（向上傳遞→TODOList）

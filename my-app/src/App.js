@@ -13,11 +13,6 @@ class App extends React.Component{
     }
   }
 
-  // 編輯物件
-  handleEditItem(itemId){
-    
-  }
-
   // 刪除物件
   handleDeleteItem(itemId){
     let newList = this.state.lists;
