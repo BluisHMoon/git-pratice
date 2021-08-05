@@ -13,6 +13,21 @@ class App extends React.Component{
     }
   }
 
+  // 編輯物件
+  handleEditItem(itemId){
+    
+  }
+
+  // 刪除物件
+  handleDeleteItem(itemId){
+    let newList = this.state.lists;
+    newList.splice(itemId, 1);
+    this.setState({
+      lists : newList
+    });
+  }
+
+  // 將資料加入陣列
   handleSubmitInput(data){
     this.state.lists.push(data);
     this.setState({
@@ -24,7 +39,7 @@ class App extends React.Component{
     return(
       <div className="content">
         <TODOForm submitTODO={this.handleSubmitInput.bind(this)}/>
-        <TODOList lists={this.state.lists}/>
+        <TODOList lists={this.state.lists} onDeleteItem={this.handleDeleteItem.bind(this)}/>
       </div>
     );
   }
