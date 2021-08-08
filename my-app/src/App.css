@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 16px 0;
+  padding: 16px;
 }
 
 .result_area{
@@ -88,8 +88,16 @@
   padding-top: 32px;
 }
 
+.list-content-area{
+  float: left;
+}
+
 .li-title, .li-content{
   font-size: 20px;
+}
+
+.list-btn-area{
+  float: right;
 }
 
 .li-edit, .li-delete{
